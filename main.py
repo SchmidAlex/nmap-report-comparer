@@ -104,16 +104,16 @@ def compare(overview, oldFile, directory):
                     if overview[host][port]['protocol'] == oldOverview[host][port]['protocol']:
                         pass
                     else: 
-                        outfile.write(host + ":\nport\t\twhats new\t\tname\n" + port + "/" + overview[host][port]['protocol'] + "\t\tprotocol\t\t\t" + overview[host][port]['name'] + "\n")
+                        outfile.write(host + ":\nport\t\twhats new\t\tname\n" + port + "/" + overview[host][port]['protocol'] + "\t\tprotocol\t\t\t" + overview[host][port]['name'] + "\n\n")
                         print("New Protocol for " + host + " detected: " + port + "/" + overview[host][port]['protocol'] + " name: " + overview[host][port]['name']) 
                 else:
-                    outfile.write(host + ":\nport\t\twhats new\t\tname\n" + port + "/" + overview[host][port]['protocol'] + "\t\tport\t\t\t" + overview[host][port]['name'] + "\n")
+                    outfile.write(host + ":\nport\t\twhats new\t\tname\n" + port + "/" + overview[host][port]['protocol'] + "\t\tport\t\t\t" + overview[host][port]['name'] + "\n\n")
                     print("New Port for " + host + " detected: " + port + "/" + overview[host][port]['protocol'] + " name: " + overview[host][port]['name'])
         else:
             outfile.write("new host detected:")
             outfile.write(host + ":\nport\t\tname\n")
             for newPorts in overview[host]:
-                outfile.write(newPorts + "/" + overview[host][newPorts]['protocol'] + "\t" + overview[host][newPorts]['name'] + "\n")
+                outfile.write(newPorts + "/" + overview[host][newPorts]['protocol'] + "\t" + overview[host][newPorts]['name'] + "\n\n")
 
     outfile.write("\nPorts and hosts which got detected in the last scan, but not in the new one: \n\n")
 
